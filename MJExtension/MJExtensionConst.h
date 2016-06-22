@@ -7,18 +7,6 @@
 // 过期
 #define MJExtensionDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
-// 构建错误
-#define MJExtensionBuildError(clazz, msg) \
-NSError *error = [NSError errorWithDomain:msg code:250 userInfo:nil]; \
-[clazz setMj_error:error];
-
-// 日志输出
-#ifdef DEBUG
-#define MJExtensionLog(...) NSLog(__VA_ARGS__)
-#else
-#define MJExtensionLog(...)
-#endif
-
 /**
  * 断言
  * @param condition   条件
